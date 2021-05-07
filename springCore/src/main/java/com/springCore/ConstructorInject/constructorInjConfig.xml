@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <bean class="com.springCore.ConstructorInject.Certi" name="certName">
+    <constructor-arg value="Spring Core"/>
+    </bean>
+
+	<bean class="com.springCore.ConstructorInject.Person"
+		name="person">
+		<constructor-arg value="Rahul"/>
+		<!-- type="int" element can solve ambiguity problem 
+		and with the help of index attribute you can set priority of value 
+		insertion.
+		ex:- Add(int a, int b)
+		index="1", index="0"
+		here - first value goes in b and second value goes in a. 
+		-->
+		<constructor-arg value="101" type="int"/>
+		<constructor-arg ref="certName" />
+	</bean>
+	
+	<!-- Using C schema -->
+	
+	<bean class="com.springCore.ConstructorInject.Person" name="person1" 
+	c:personId="102" c:personName="Vipul" c:cert-ref="certName"
+	/>
+
+
+</beans>

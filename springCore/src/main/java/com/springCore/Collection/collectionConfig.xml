@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- This is our bean -->
+	<!-- Injecting Collection type data -->
+	<bean class="com.springCore.Collection.Emp" name="emp1">
+		<property name="name" value="Rahul" />
+
+		<property name="phone">
+			<list>
+				<value>9905350054</value>
+				<value>8271329446</value>
+				<value>7909033562</value>
+				<null />
+			</list>
+		</property>
+		<property name="address">
+			<set>
+				<value>Ranchi</value>
+				<value>Delhi</value>
+				<value>Bangluru</value>
+			</set>
+		</property>
+		<property name="course">
+			<map>
+				<entry key="Java" value="2 months"></entry>
+				<entry key="Angular" value="3 months"></entry>
+			</map>
+		</property>
+		<property name="props">
+			<props>
+				<prop key="fname">Rahul</prop>
+				<prop key="mname">Kumar</prop>
+				<prop key="lname">Ram</prop>
+			</props>
+		</property>
+	</bean>
+</beans>
